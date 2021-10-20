@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { user } from '../interface-users';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listing-table',
@@ -10,9 +11,13 @@ export class ListingTableComponent implements OnInit {
 
   @Input() users: user[] = [];
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  openDetailCard(user: user) {
+    this._router.navigate(['/user', String(user.id)]);
   }
 
 }

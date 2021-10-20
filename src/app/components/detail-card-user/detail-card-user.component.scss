@@ -1,0 +1,52 @@
+@import "../../../stylesVariables.scss";
+
+.detail-card-user-card {
+    width: 100%;
+    max-width: 2000px;
+    display: flex;
+    flex-flow: wrap;
+    margin: auto;
+    background-color: $primaryColor;
+
+
+    .detail-card-user-part-of-detail {
+        width: calc(50% - 100px);
+        display: inline;
+        padding: 50px;
+        align-self: flex-end;
+    
+        .detail-card-user-text {
+            width: 100%;
+        }
+
+        .detail-card-user-image {
+            width: 80%;
+            max-width: 700px;
+        }
+    }
+
+    .user-part-of-detail:nth-child(1) {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 600px) {
+        .user-part-of-detail {
+            width: calc(100% - 8%);
+            padding: 8%;
+        }
+    }
+}
+
+.detail-card-user-button-area {
+    width: 100%;
+    max-width: 2000px;
+    margin: auto;
+
+    button {
+        margin: 20px;
+        padding: 10px 20px;
+        background-color: $primaryColor;
+        border: none;
+        color: $tertiaryColor;
+    }
+}

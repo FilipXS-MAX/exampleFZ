@@ -7,16 +7,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListingServiceService {
 
-  constructor(private _http: HttpClient) { }
-
   private api = {
     url: "https://reqres.in/api/users",
     pageParameter: "page"
   }
 
+  constructor(private _http: HttpClient) { }
 
-  downloadAllUsers(pageNumber: string): Observable<any> {
-    //return this._http.get<any>(`${this.api.url}?${this.api.pageParameter}=${pageNumber}`);
-    return this._http.get<any>(`http://localhost:4200/assets/dummy.json`);
+
+  downloadData(pageNumber: string): Observable<any> {
+    let downloadUrl = `${this.api.url}?${this.api.pageParameter}=${pageNumber}`
+    return this._http.get<any>(downloadUrl);
   }
 }

@@ -1,0 +1,5 @@
+<div *ngFor="let page of pages" (click)="changePage(page)" class="listing-paginator-div">
+    <button *ngIf="page != 0" [class.listing-paginator-active]="page == actualPage" class="listing-paginator-page-button noselect">
+        {{page}}
+    </button>
+</div>

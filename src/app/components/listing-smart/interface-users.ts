@@ -1,7 +1,7 @@
 export interface listOfUsers {
     data: user[],
     page: number,
-    pet_page: 6
+    per_page: 6
     total: number,
     total_pages: number
     support: {

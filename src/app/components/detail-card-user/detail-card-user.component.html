@@ -1,0 +1,17 @@
+<div class="detail-card-user-card">
+    <div class="detail-card-user-part-of-detail noselect">
+        <img src="{{detailOfUser.avatar}}" alt="{{detailOfUser.first_name}}+{{detailOfUser.last_name}}"
+            class="detail-card-user-image">
+    </div>
+    
+    <div class="detail-card-user-part-of-detail">
+        <p class="detail-card-user-text"><b>ID:</b> {{detailOfUser.id}}</p>
+        <p class="detail-card-user-text"><b>Meno:</b> {{detailOfUser.first_name}}</p>
+        <p class="detail-card-user-text"><b>Priezvisko:</b> {{detailOfUser.last_name}}</p>
+        <p class="detail-card-user-text"><b>Email:</b> {{detailOfUser.email}}</p>
+    </div>
+</div>
+
+<div class="detail-card-user-button-area">
+    <button (click)="goToListingpage()">Naspäť na listining</button>
+</div>

@@ -1,5 +1,5 @@
-<div class="user-list" *ngFor="let user of users; index as i">
-    <p class="user-initials">{{user.first_name | onlyFirstWords: user.last_name}}</p>
-    <p class="user-name">{{user.first_name}} {{user.last_name}}</p>
-    <p class="user-email">{{user.email}}</p>
+<div class="listing-table-list" *ngFor="let user of users" (click)="openDetailCard(user)">
+    <p class="listing-table-initials noselect text-left">{{user.first_name | onlyFirstWords: user.last_name}}</p>
+    <p class="listing-table-name text-left">{{user.first_name}} {{user.last_name}}</p>
+    <p class="listing-table-email text-left">{{user.email}}</p>
 </div>

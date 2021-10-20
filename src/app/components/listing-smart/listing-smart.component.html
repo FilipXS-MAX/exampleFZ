@@ -1,3 +1,7 @@
 <div id="table-of-listing">
     <app-listing-table [users]="allUsers"></app-listing-table>
+    <app-listing-paginator *ngIf="numberOfPages != 0"
+        (changePage)="changePage($event)"
+        [numberOfPages]="numberOfPages">
+    </app-listing-paginator>
 </div>

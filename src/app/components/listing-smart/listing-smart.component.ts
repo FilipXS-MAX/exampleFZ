@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ListingServiceService } from 'src/app/services/listing-service.service';
 import { listOfUsers, user } from './interface-users';
+
+import { ListingServiceService } from 'src/app/services/listing-service.service';
+import { GlobalVariablesService } from 'src/app/services/global-variables.service';
 
 @Component({
   selector: 'app-listing-smart',
@@ -9,16 +11,29 @@ import { listOfUsers, user } from './interface-users';
 })
 export class ListingSmartComponent implements OnInit {
 
-  constructor(private _listingServiceService: ListingServiceService) { }
-
   public allUsers: user[] = [];
+  public numberOfPages: number = 0;
+
+
+  constructor(private _listingServiceService: ListingServiceService,
+              private _globalVariablesService: GlobalVariablesService) { }
+
 
   ngOnInit(): void {
-    this._listingServiceService.downloadAllUsers("1").subscribe((users: listOfUsers) => {
-      console.log(users.data)
+    this.downloadData("1")
+  }
+
+  downloadData(page: string) {
+
+    this._listingServiceService.downloadData(page).subscribe((users: listOfUsers) => {
+      this.numberOfPages = users.total_pages
       this.allUsers = users.data;
-      
+      this._globalVariablesService.setUsers(users.data)
     });
+  }
+
+  changePage(event: any) {
+    this.downloadData(event)
   }
 
 }

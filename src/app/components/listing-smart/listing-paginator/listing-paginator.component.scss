@@ -1,0 +1,26 @@
+@import "../../../../stylesVariables.scss";
+
+:host {
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.listing-paginator-div {
+    display: inline-block;
+
+    .listing-paginator-page-button {
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: $primaryColor;
+        border: none;
+        cursor: pointer;
+        color: $tertiaryColor;
+    }
+
+    .listing-paginator-active {
+        background-color: $activeColor;
+    }
+}
+
