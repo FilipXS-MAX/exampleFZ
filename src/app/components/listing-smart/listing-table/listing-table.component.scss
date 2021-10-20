@@ -1,0 +1,44 @@
+:host {
+    width: 100%;
+}
+
+.user-list {
+    display: inline-block;
+    margin: 15px;
+    padding: 20px;
+    width: 200px;
+    min-height: 200px;
+    border: 5px solid transparent;
+ 
+    .user-initials {
+        font-weight: bold;
+        font-size: 60px;
+        margin: 0px;
+        padding: 0px 0px 85px 0px;
+    }
+
+    .user-name {
+        margin-bottom: 5px;
+        border-bottom: 1px solid black;
+    }
+
+    .user-email {
+
+    }
+
+    p {
+        margin: 0px;
+    }
+}
+
+.user-list:nth-child(2n+0) {
+    background-color: #C5c5c5;
+}
+
+.user-list:nth-child(2n+1) {
+    background-color: #E6e6e6;
+}
+
+.user-list:hover {
+    border: 5px solid black;
+}

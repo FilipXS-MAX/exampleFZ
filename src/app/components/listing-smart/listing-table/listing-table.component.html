@@ -1,0 +1,5 @@
+<div class="user-list" *ngFor="let user of users; index as i">
+    <p class="user-initials">{{user.first_name | onlyFirstWords: user.last_name}}</p>
+    <p class="user-name">{{user.first_name}} {{user.last_name}}</p>
+    <p class="user-email">{{user.email}}</p>
+</div>
